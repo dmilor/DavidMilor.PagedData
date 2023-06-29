@@ -15,15 +15,16 @@ namespace DavidMilor.PagedData
 
             int fullSetAmount = queryToPage.Count();
 
-            var maximumPage = 0;
+            int maximumPage;
 
-            IEnumerable<T>? items = null;
+            IEnumerable<T>? items;
             
             if(fullSetAmount == 0)
             {
                 page = 0;
                 maximumPage = 0;
                 pageSize = 0;
+                items = new List<T>();
             }
             else
             {

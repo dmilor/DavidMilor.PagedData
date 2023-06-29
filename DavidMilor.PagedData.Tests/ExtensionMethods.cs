@@ -8,7 +8,6 @@ namespace DavidMilor.PagedData.Tests
     public class ExtensionMethods
     {
         const int PAGESIZE_VALID = 10;
-        const int PAGESIZE_INVALID = 0;
 
         #region MaximumPage
 
@@ -57,9 +56,12 @@ namespace DavidMilor.PagedData.Tests
         [Fact]
         public void Page_NullQuery_ThrowsException()
         {
-            IOrderedQueryable<int> query = null;
+            IOrderedQueryable<int>? query = null;
 
+#pragma warning disable CS8604 // Possible null reference argument.
+            //Will ALWAYS be null as it's a test for null query being passed in
             Assert.Throws<ArgumentNullException>(()=>query.Page(1,PAGESIZE_VALID));
+#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         [Fact]
@@ -94,7 +96,7 @@ namespace DavidMilor.PagedData.Tests
             Assert.Equal(0, result.PageSize);
             Assert.Equal(0, result.FullSetAmount);
 
-            Assert.Null(result.Items);
+            Assert.Empty(result.Items);
 
             Assert.False(result.IsFirst);
             Assert.False(result.IsLast);
@@ -184,17 +186,17 @@ namespace DavidMilor.PagedData.Tests
 
 
         #region helpers
-        private IOrderedQueryable<int> DefaultQuery()
+        private static IOrderedQueryable<int> DefaultQuery()
         {
             return ValidQuery(DefaultQuerySize());
         }
-        private int DefaultQuerySize()
+        private static int DefaultQuerySize()
         {
             //two full pages and a partial page
             return (PAGESIZE_VALID * 3) - 1;
         }
 
-        private IOrderedQueryable<int> ValidQuery(int amountOfRecordsInQuery)
+        private static IOrderedQueryable<int> ValidQuery(int amountOfRecordsInQuery)
         {
             if(amountOfRecordsInQuery <= 0)
             {
