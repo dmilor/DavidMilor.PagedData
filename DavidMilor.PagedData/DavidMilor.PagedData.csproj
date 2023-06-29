@@ -1,9 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Authors>dmilor</Authors>
+    <Description>Simple extension method to page data from a query</Description>
+    <PackageProjectUrl>https://github.com/dmilor/DavidMilor.PagedData</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/dmilor/DavidMilor.PagedData</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>LINQ, EntityFramework, paging</PackageTags>
+    <Copyright>MIT</Copyright>
+    <Company>David Milor</Company>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
