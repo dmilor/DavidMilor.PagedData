@@ -10,13 +10,24 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/dmilor/DavidMilor.PagedData</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>LINQ, EntityFramework, paging</PackageTags>
-    <Copyright>MIT</Copyright>
+    <PackageTags>LINQ; EntityFramework; paging</PackageTags>
+    <Copyright>David Milor, 2023</Copyright>
     <Company>David Milor</Company>
+    <Title>Paged Data</Title>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
